@@ -33,7 +33,7 @@ export class CirclePage {
   }
 
   loadMap() {
-    let center: ILatLng = {"lat": 32, "lng": -97};
+    let center: ILatLng = {"lat": -7.323742, "lng": 112.741155};
 
     let radius = 300;  // radius (meter)
 

@@ -30,8 +30,9 @@ export class HomePage {
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
         target: {
-          lat: 43.0741704,
-          lng: -89.3809802
+          // lokasi inixindo surabaya
+          lat: 112.741155,
+          lng: -7.323742
         },
         zoom: 18,
         tilt: 30
@@ -46,7 +47,7 @@ export class HomePage {
     // Get the location of you
     this.map.getMyLocation()
       .then((location: MyLocation) => {
-        console.log(JSON.stringify(location, null ,2));
+        console.log(JSON.stringify(location, null, 2));
 
         // Move the map camera to the location with animation
         this.map.animateCamera({
@@ -54,23 +55,23 @@ export class HomePage {
           zoom: 17,
           tilt: 30
         })
-        .then(() => {
-          // add a marker
-          let marker: Marker = this.map.addMarkerSync({
-            title: '@ionic-native/google-maps plugin!',
-            snippet: 'This plugin is awesome!',
-            position: location.latLng,
-            animation: GoogleMapsAnimation.BOUNCE
-          });
+          .then(() => {
+            // add a marker
+            let marker: Marker = this.map.addMarkerSync({
+              title: 'My Location',
+              snippet: 'This is my location!',
+              position: location.latLng,
+              animation: GoogleMapsAnimation.BOUNCE
+            });
 
-          // show the infoWindow
-          marker.showInfoWindow();
+            // show the infoWindow
+            marker.showInfoWindow();
 
-          // If clicked it, display the alert
-          marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-            this.showToast('clicked!');
+            // If clicked it, display the alert
+            marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
+              this.showToast('location clicked!');
+            });
           });
-        });
       });
   }
 

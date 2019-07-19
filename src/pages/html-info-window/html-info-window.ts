@@ -35,7 +35,7 @@ export class HtmlInfoWindowPage {
   loadMap() {
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
-        target: {lat: 35.685208, lng: -121.168225},
+        target: {lat: -7.323742, lng: 112.741155},
         zoom: 5
       }
     });
@@ -56,7 +56,7 @@ export class HtmlInfoWindowPage {
     });
 
     let marker: Marker = this.map.addMarkerSync({
-      position: {lat: 35.685208, lng: -121.168225},
+      position: {lat: -7.323742, lng: 112.741155},
       draggable: true,
       disableAutoPan: true
     });

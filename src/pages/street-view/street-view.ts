@@ -39,7 +39,7 @@ export class StreetViewPage {
   }
 
   loadMap() {
-    let initialPos: ILatLng = {lat: 42.345573, lng: -71.098326};
+    let initialPos: ILatLng = {lat: -7.323742, lng: 112.741155};
 
     // Create a map after the view is loaded.
     // (platform is already ready in app.component.ts)
